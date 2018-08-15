@@ -1,0 +1,44 @@
+﻿@model DwarfGameMVC.Models.NPCListViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>Race</th>
+        <th>Starting Gold</th>
+        <th>Bluff Chance</th>
+    </tr>
+
+    @foreach (var item in Model.NPCs)
+    {
+        <tr>
+            <td>
+                @item.Name
+            </td>
+            <td>
+                @item.PlayerRace
+            </td>
+            <td>
+                @item.StartGold
+            </td>
+            <td>
+                @item.BluffChance
+
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
+
+</table>

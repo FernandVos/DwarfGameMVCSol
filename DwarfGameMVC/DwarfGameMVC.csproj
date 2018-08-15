@@ -143,10 +143,15 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NPCController.cs" />
     <Compile Include="Controllers\PlayerController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\NPCListViewModel.cs" />
+    <Compile Include="Models\NPCModel.cs" />
+    <Compile Include="Models\PlayerListViewModel.cs" />
+    <Compile Include="Models\PlayerModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -187,11 +192,11 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Rules.cshtml" />
+    <Content Include="Views\Player\Index.cshtml" />
+    <Content Include="Views\NPC\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
-    <Folder Include="Views\Player\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -205,6 +210,16 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DwarfGame.DAL\DwarfGame.DAL.csproj">
+      <Project>{28ea5b42-8513-4e59-94cd-770eab00bd21}</Project>
+      <Name>DwarfGame.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DwarfGame.Shared\DwarfGame.Shared.csproj">
+      <Project>{651cfa44-6a89-4864-9310-93794c0df5cd}</Project>
+      <Name>DwarfGame.Shared</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
