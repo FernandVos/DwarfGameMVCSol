@@ -21,5 +21,39 @@ namespace DwarfGameMVC.Controllers
             model.NPCs = NPCs.Select(p => NPCModel.FromDatabaseModel(p)).ToList();
             return View(model);
         }
+
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Create(NPCModel model)
+        {
+            if (ModelState.IsValid)
+            {
+
+                npcRepository.Add(NPCModel.ToDatabaseModel(model));
+
+                return RedirectToAction("Index");
+
+            }
+
+            return View(model);
+
+        }
+
+        public ActionResult Edit(Guid id)
+        {
+            var model = NPCModel.FromDatabaseModel(npcRepository.GetNPC(id));
+            return View(model);
+
+        }
+       
+        public ActionResult Delete(Guid id)
+        {
+            npcRepository.Delete(id);
+            return RedirectToAction("Index");
+        }
     }
 }

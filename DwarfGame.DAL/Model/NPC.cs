@@ -9,6 +9,12 @@ namespace DwarfGame.DAL.Model
 {
     public class NPC
     {
+        public NPC()
+        {
+            Id = Guid.NewGuid();
+        }
+
+        public Guid Id { get; }
         public string Name { get; set; }
         public PlayerRace PlayerRace { get; set; }
         public int StartGold { get; set; }

@@ -20,6 +20,11 @@ namespace DwarfGame.DAL
             return Database.Players;
         }
 
+        public void Add(Player player)
+        {
+            Database.Players.Add(player);
+        }
+
        
 
 

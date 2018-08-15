@@ -16,6 +16,24 @@ namespace DwarfGame.DAL
             return Database.NPC;
         }
 
-      
+        public void Add(NPC npc)
+        {
+            Database.NPC.Add(npc);
+        }
+
+        public void Delete(Guid npc)
+        {
+            var itemToRemove = Database.NPC.SingleOrDefault(r => r.Id == npc);
+            if (itemToRemove != null)
+                Database.NPC.Remove(itemToRemove);
+        }
+
+        // haal model op op basis van id
+        public NPC GetNPC(Guid id)
+        {
+            var result = Database.NPC.FirstOrDefault(n => n.Id == id);
+            return result;
+        }
+       
     }
 }

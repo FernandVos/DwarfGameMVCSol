@@ -194,6 +194,9 @@
     <Content Include="Views\Home\Rules.cshtml" />
     <Content Include="Views\Player\Index.cshtml" />
     <Content Include="Views\NPC\Index.cshtml" />
+    <Content Include="Views\Player\Create.cshtml" />
+    <Content Include="Views\NPC\Create.cshtml" />
+    <Content Include="Views\NPC\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -17,13 +17,32 @@ namespace DwarfGameMVC.Controllers
         {
             var model = new PlayerListViewModel();
             var players = playerRepository.GetAll();
-            model.Players = players.Select(p => PlayerModel.FromPlayer(p)).ToList();
+            model.Players = players.Select(p => PlayerModel.FromDatabaseModel(p)).ToList();
             return View(model);
         }
 
-        public ActionResult Details(string playerName)
+       
+
+        public ActionResult Create()
         {
             return View();
         }
+
+        [HttpPost]
+        public ActionResult Create(PlayerModel model)
+        {
+            if (ModelState.IsValid)
+            {
+
+                playerRepository.Add(PlayerModel.ToDatabaseModel(model));
+
+                return RedirectToAction("Index");
+
+            }
+
+            return View(model);
+
+        }
     }
+
 }
