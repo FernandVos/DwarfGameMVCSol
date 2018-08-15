@@ -16,7 +16,7 @@ namespace DwarfGameMVC.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Your application description page.  Commit example";
 
             return View();
         }
